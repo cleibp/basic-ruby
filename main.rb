@@ -188,3 +188,51 @@ puts "### PONTEIRO ###\n";
 puts "Não tem PONTEIRO \n";
 puts " Não é necessário liberar memória manualmente, como em C ou C++. A variável será automaticamente coletada pelo coletor de lixo quando não estiver mais em uso. \n";
 puts "\n";
+
+# TRY
+puts "### TRY ###\n";
+print "Digite o valor 1 para o dividendo:  "
+numero1 = gets.chomp.to_i
+puts
+print "Digite o valor 2 para o divisor:  "
+numero2 = gets.chomp.to_i
+begin
+ if numero2 == 0
+    raise 'Divisão por zero não é permitida!'
+  end
+
+  res = numero1 / numero2
+  puts "Resultado da divisão: #{res}"
+rescue => e
+  puts "Ocorreu uma exceção: #{e.message}"
+end
+puts "\n";
+
+
+# ENUM
+puts "### ENUM ###\n";
+module Cor
+    Vermelho = :vermelho
+    Verde = :verde
+    Azul = :azul
+    Amarelo = :amarelo
+    Laranja = :laranja
+end
+
+minha_cor = Cor::Azul
+case minha_cor
+when Cor::Vermelho
+    puts "Minha cor favorita é vermelho."
+when Cor::Verde
+    puts "Minha cor favorita é verde."
+when Cor::Azul
+    puts "Minha cor favorita é azul."
+when Cor::Amarelo
+    puts "Minha cor favorita é amarelo."
+when Cor::Laranja
+    puts "Minha cor favorita é laranja."
+else
+    puts "Eu não tenho uma cor favorita."
+end
+
+puts "\n";
